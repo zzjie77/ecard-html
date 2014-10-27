@@ -1,0 +1,11 @@
+.container{min-width:960px;margin:0 auto}
+.aside{float:left}
+.aside-2{float:right}
+.aside .widget{margin-right:12px}
+.container>.content{overflow:hidden}
+.content_wrapper{padding:25px 0 0}
+.aside+.aside-2+.content .content_wrapper,.aside+.content .content_wrapper{padding-left:10px}
+.aside-2+.content .content_wrapper{padding-right:10px}
+.aside-2>:first-child,.aside>:first-child{margin-top:25px}
+.grid-3{width:120px}
+.grid-6{width:240px}
