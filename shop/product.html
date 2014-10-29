@@ -6,7 +6,8 @@
   <meta charset="utf-8">
   <meta name="renderer" content="webkit">
   <title>今日推荐 - 太美</title>
-  <script>var _write = document.write;
+  <script>
+var _write = document.write;
 var write = function (str) {
   SNB = window.SNB || {};
   
@@ -29,47 +30,59 @@ document.write = write;
   <link rel="stylesheet" href="./css/layout.css">
   <!--通用css end-->
   <!--默认给导航条留位置-->
-  <style>body {
-  padding-top: 40px;
-}
-
-/* TODO */
-.search .dropdown-menu strong {
-  height: 12px;
-  line-height: 12px;
-}</style>
+  <style>
+  body {
+    padding-top: 40px;
+  }
+</style>
   <link rel="apple-touch-icon-precomposed" href="./images/icon-144.png">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/demo.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="./css/bootstrap.o.css">
+  <link rel="stylesheet" href="./css/flexslider.css" type="text/css" media="screen" />
   <!--通用js start-->
-  <style>html {
-  display: none
-}</style>
-  <script>if (self == top) {
-  document.documentElement.style.display = 'block';
-} else if (top.location.host !== 'xueqiu.com') {
-  top.location = self.location;
-}
-</script>
   <script src="./js/jquery-1.9.1.js"></script>
   <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/jquery.flexslider-min.js"></script>
   <!--通用js end-->
-  <!--block head-->
-  <link rel="stylesheet" href="./css/base.css">
-  <link rel="stylesheet" href="./css/bootstrap.css">
+
 
   <script>
     $(function(){
       $("#loginBtn").click(function(){
         $("#loginDialog").show();
       });
-      $('.carousel').carousel();
+
+      $('#carousel').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        itemWidth: 60,
+        itemMargin: 5,
+        asNavFor: '#slider'
+      });
+
+      $('#slider').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        sync: "#carousel"
+      });
+
+
     });
   </script>
 
-  <style>.content_wrapper {
+<style>
+.content_wrapper {
   margin: 0;
   border: 0;
   padding: 0;
-}</style>
+}
+
+</style>
 </head>
   <!--body-->
 <body id="body" class="isPC isNotMobile isNotPad webkit">
@@ -91,33 +104,6 @@ document.write = write;
     浏览器。
   </div>
   <![endif]-->
-  <!--导航条-->
-  <div class="temp">
-    <div class="tooltip">
-      <div class="tooltip-arrow above">
-        <div class="tooltip-arrow-in"></div>
-        <div class="tooltip-arrow-out"></div>
-      </div>
-      <div class="tooltip-alpha"></div>
-      <div class="tooltip-inner"></div>
-      <div class="tooltip-arrow below">
-        <div class="tooltip-arrow-out"></div>
-        <div class="tooltip-arrow-in"></div>
-      </div>
-    </div>
-    <div class="new-tooltip">
-      <div class="new-tooltip-arrow above">
-        <div class="new-tooltip-arrow-in"></div>
-        <div class="new-tooltip-arrow-out"></div>
-      </div>
-      <div class="new-tooltip-alpha"></div>
-      <div class="new-tooltip-inner"></div>
-      <div class="new-tooltip-arrow below">
-        <div class="new-tooltip-arrow-out"></div>
-        <div class="new-tooltip-arrow-in"></div>
-      </div>
-    </div>
-  </div>
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
@@ -144,44 +130,86 @@ document.write = write;
   </div>
 
   <div id="container" class="container">
-      <div style="height:200px"></div>
-      <div class="row">
-        <div class="span8">
-          <div id="myCarousel" class="carousel slide">
-            <ol class="carousel-indicators">
-              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-            <!-- Carousel items -->
-            <div class="carousel-inner">
-              <div class="active item"><img /></div>
-              <div class="item">…</div>
-              <div class="item">…</div>
-            </div>
-            <!-- Carousel nav -->
-            <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-            <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-          </div>
-        </div>
-        <div class="span4">
-          <ul class="summary">
-            <h3>常州恐龙园</h3>
-            <li>江苏省常州市新区汉江路1号</li>
-            <li>标签:xx</li>
-            <li>简介：苏州乐园投入巨资打造的全国唯一大型室内儿童亲子主题乐园，梦幻般的糖果形状装饰，多彩的节目，奇趣的游戏，组.. ……</li>
-            <li><button class="btn-primary">立即预定</button></li>
+    <div class="row-fluid">
+      <div class="span7">
+        <div id="slider" class="flexslider">
+          <ul class="slides">
+            <li>
+              <img src="images/landscape/01.jpg" />
+            </li>
+            <li>
+              <img src="images/landscape/02.jpg" />
+            </li>
+            <li>
+              <img src="images/landscape/03.jpg" />
+            </li>
+            <li>
+              <img src="images/landscape/04.jpg" />
+            </li>
+            <li>
+              <img src="images/landscape/05.jpg" />
+            </li>
+            <li>
+              <img src="images/landscape/06.jpg" />
+            </li>
+            <li>
+              <img src="images/landscape/07.jpg" />
+            </li>
+            <li>
+              <img src="images/landscape/08.jpg" />
+            </li>
+            <li>
+              <img src="images/landscape/09.jpg" />
+            </li>
+            <li>
+              <img src="images/landscape/10.jpg" />
+            </li>
           </ul>
         </div>
-        <style type="text/css">
-          .summary {
-            line-height: 1.5;
+        <div id="carousel" class="flexslider">
+          <ul class="slides">
+            <li>
+              <img src="images/landscape/thumb-01.jpg" />
+            </li>
+            <li>
+              <img src="images/landscape/thumb-02.jpg" />
+            </li>
+            <li>
+              <img src="images/landscape/thumb-03.jpg" />
+            </li>
+            <li>
+              <img src="images/landscape/thumb-04.jpg" />
+            </li>
+            <li>
+              <img src="images/landscape/thumb-05.jpg" />
+            </li>
+            <li>
+              <img src="images/landscape/thumb-06.jpg" />
+            </li>
+            <li>
+              <img src="images/landscape/thumb-07.jpg" />
+            </li>
+            <li>
+              <img src="images/landscape/thumb-08.jpg" />
+            </li>
+            <li>
+              <img src="images/landscape/thumb-09.jpg" />
+            </li>
+            <li>
+              <img src="images/landscape/thumb-10.jpg" />
+            </li>
+          </ul>
+        </div>
+      </div>
 
-          }
-
-        </style>
-
-
+      <div class="span5">
+        <div class="row-fluid">
+          <h1>常州恐龙园xx</h1>
+          <p>江苏省常州市新区汉江路1号</p>
+          <p>简介：苏州乐园投入巨资打造的全国唯一大型室内儿童亲子主题乐园，梦幻般的糖果形状装饰，多彩的节目，奇趣的游戏，组.. ……</p>
+          <button class="btn-primary">立即预定</button>
+        </div>
+      </div>
 
     </div>
   </div>
